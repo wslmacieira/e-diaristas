@@ -4,7 +4,7 @@
   <main>
     <h1>Lista de Diaristas</h1>
 
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>#</th>
@@ -21,12 +21,14 @@
           <td th:text="${diarista.email}"></td>
           <td th:text="${diarista.estado}"></td>
           <td>
-            <a href="#">Editar</a>
-            <a href="#">Excluir</a>
+            <a class="btn btn-sm btn-warning" href="#">Editar</a>
+            <a class="btn btn-sm btn-danger" href="#">Excluir</a>
           </td>
         </tr>
       </tbody>
     </table>
+
+    <a class="btn btn-sm btn-primary" th:href="@{/admin/diaristas/cadastrar}">Cadastrar Diarista</a>
   </main>
 </body>
 </html>
