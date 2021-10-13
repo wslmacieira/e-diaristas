@@ -1,6 +1,7 @@
 package com.example.ediaristas.models;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +10,10 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.example.ediaristas.converters.CepConverter;
+import com.example.ediaristas.converters.CpfConverter;
+import com.example.ediaristas.converters.TelefoneConverter;
 
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -38,6 +43,7 @@ public class Diarista {
     @Size(min = 11, max = 14)
     @CPF
     @Column(nullable = false, unique = true, length = 11)
+    @Convert(converter = CpfConverter.class)
     private String cpf;
 
     @NotNull
@@ -49,6 +55,7 @@ public class Diarista {
     @NotNull
     @Size(min = 11, max = 15)
     @Column(nullable = false, length = 11)
+    @Convert(converter = TelefoneConverter.class)
     private String telefone;
 
     @NotNull
@@ -72,6 +79,7 @@ public class Diarista {
     @NotNull
     @Size(min = 8, max = 9)
     @Column(nullable = false, length = 8)
+    @Convert(converter = CepConverter.class)
     private String cep;
 
     @NotNull
