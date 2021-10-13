@@ -47,7 +47,7 @@ public class Diarista {
     private String email;
 
     @NotNull
-    @Size(min = 11, max = 14)
+    @Size(min = 11, max = 15)
     @Column(nullable = false, length = 11)
     private String telefone;
 
