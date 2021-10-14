@@ -5,8 +5,9 @@ import java.io.IOException;
 import javax.validation.Valid;
 
 import com.example.ediaristas.models.Diarista;
-import com.example.ediaristas.reposiries.DiaristaRepository;
+import com.example.ediaristas.repositories.DiaristaRepository;
 import com.example.ediaristas.services.FileService;
+import com.example.ediaristas.services.ViaCepService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,9 @@ public class DiaristaController {
 
     @Autowired
     private FileService fileService;
+
+    @Autowired
+    private ViaCepService viaCepService;
 
     @GetMapping
     public ModelAndView listar() {

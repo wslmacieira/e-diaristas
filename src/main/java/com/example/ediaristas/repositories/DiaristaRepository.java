@@ -1,4 +1,4 @@
-package com.example.ediaristas.reposiries;
+package com.example.ediaristas.repositories;
 
 import com.example.ediaristas.models.Diarista;
 
